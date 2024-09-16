@@ -7,6 +7,10 @@ import { useState,useEffect } from "react";
 import { UserCard } from "./UserCard";
 import { GetRandomUser } from "./api";
 
+import PostCard from "./PostCard";
+import { getPosts } from "./api";
+
+
 
 
 
@@ -14,6 +18,7 @@ import { GetRandomUser } from "./api";
 function HomePage() {
 
   const [userdata, setUserData] = useState(null);
+   const [data, setData] = useState(null);
   
 
 
@@ -28,6 +33,9 @@ function HomePage() {
 
  
 
+  useEffect(() => {
+    getPosts().then((randomuserdata ) => setData(randomuserdata));
+  }, []);
 
 
 
@@ -63,8 +71,8 @@ function HomePage() {
         <div>
           {userdata && <UserCard data={userdata} />}
          
-       
-         
+          
+      
         </div>
       </body>
     </>

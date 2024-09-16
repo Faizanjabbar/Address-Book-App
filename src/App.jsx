@@ -10,7 +10,7 @@ function App() {
      <BrowserRouter>
         <Routes>
         <Route path='/Modal' element={<Modal/>} />
-      <Route path='/HomePage' element={<HomePage />} />
+      <Route path='/' element={<HomePage />} />
       <Route path='/Settings' element={<Settings />} />
   </Routes>
   </BrowserRouter>
